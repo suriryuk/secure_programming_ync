@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XXE Test</title>
+</head>
+<body>
+    <form action="/secu/xxe_action/" method="post">
+	{% csrf_token %}
+        <textarea name="xml_data" cols="50" rows="10"></textarea>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Web Page</title>
+<style>
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+h4 {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 200px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.block:hover {
+    border-color: #f00;
+    box-shadow: 0 0 10px #f00;
+}
+
+.block a {
+    text-decoration: none;
+    color: #000;
+}
+
+</style>
+</head>
+<body>
+    <nav>
+        <ul>
+	    <li><a href="/{{ login }}/">{{ login }}</a></li>
+            <li><a href="/secu/">Security</a></li>
+            <li><a href="/unsecu/">Vulnerability</a></li>
+        </ul>
+    </nav>
+    <main>
+	<h4>Security</h4>
+        <div class="block">
+            <a href="/secu/sqli/">SQL Injection</a>
+        </div>
+        <div class="block">
+            <a href="/secu/xss/?payload=">Cross Site Script(XSS)</a>
+        </div>
+        <div class="block">
+            <a href="/secu/xxe/">External XML Entity(XXE)</a>
+        </div>
+        <div class="block">
+            <a href="#">Block 4</a>
+        </div>
+    </main>
+</body>
+</html>

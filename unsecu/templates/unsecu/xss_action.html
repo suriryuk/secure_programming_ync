@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search page</title>
+		<meta chatset="utf-8">
+		<style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin-bottom: 2rem;
+        }
+        input[type="text"] {
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin-right: 0.5rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 0.5rem 0;
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+    </style>
+	</head>
+	<body>
+		<form action="/unsecu/xss/" method="get">
+                        <input type="text" name="payload" placeholder="test">
+                        <input type="submit" value="submit">
+                </form>
+
+		<h3>result of {{ payload | safe }} :</h3>
+
+		{% if results %}
+    		<ul>
+        		{% for result in results %}
+            			<li>{{ result }}</li>
+        		{% endfor %}
+    		</ul>
+    		{% else %}
+    		<p>검색 결과가 없습니다.</p>
+    		{% endif %}
+	</body>
+</html>
